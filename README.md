@@ -1,0 +1,2 @@
+# moodle_auth_rolespecificloginredirect
+This Moodle Authetication Role Specific Redirect on Login is an extended version of the Authentication with Email for Moodle - Copyright (C) Martin Dougiamas. This new authentication module redirects users with specific roles to specific Moodle page. This functionality was created by Tobias Kutzner and Igor Nesterow (2020) and extended by Eleonora Kostova Copyright (C) 2021.
