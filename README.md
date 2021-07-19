@@ -58,3 +58,4 @@ Example: By selecting *manager* we will redirect every user with this role to a 
 ![](save_manager_role.PNG)
 
 ![](update_manager_role_marked.PNG)
+
