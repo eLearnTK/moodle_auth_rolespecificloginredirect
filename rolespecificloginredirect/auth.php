@@ -29,6 +29,9 @@
 defined('MOODLE_INTERNAL') || die;
 require_once($CFG->libdir . '/authlib.php');
 
+/**
+ * User Redirection Authentication Plugin.
+ */
 class auth_plugin_rolespecificloginredirect extends auth_plugin_base {
     /**
      * Constructor.
@@ -39,6 +42,10 @@ class auth_plugin_rolespecificloginredirect extends auth_plugin_base {
         $this->config = get_config('auth_rolespecificloginredirect');
     }
 
+    /**
+     * Hook for login page
+     *
+     */
     public function loginpage_hook() {
         global $CFG, $SESSION, $frm, $user, $DB, $PAGE;
 
@@ -129,7 +136,10 @@ class auth_plugin_rolespecificloginredirect extends auth_plugin_base {
 
         return false;
     }
-
+    /**
+     * Hook for logout page
+     *
+     */
     public function logoutpage_hook() {
         global $CFG, $redirect;
 

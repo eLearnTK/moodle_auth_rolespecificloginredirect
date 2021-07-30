@@ -25,20 +25,21 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- define([], function () {
+define([], function () {
     return /** @alias module:auth_rolespecificloginredirect/dynamicevent */ {
         /**
+         * @param {Array} jsCode Contains all records in the table "auth_rolespecificredir".
          * Implements input's field text output.
          * @method dynamicChange
          */
-        dynamicChange: function (js_code) {
-            if (js_code) {
+        dynamicChange: function (jsCode) {
+            if (jsCode) {
                 if (document.getElementById("id_s__urls")) {
                     document.getElementById("id_s__roles")
-                      .addEventListener("change", function (e) {
-                        if (js_code[parseInt(document.getElementById("id_s__roles").value)]) {
-                            document.getElementById("id_s__urls").value = js_code[
-                                parseInt(document.getElementById("id_s__roles").value)]["urltogo"];
+                      .addEventListener("change", function () {
+                        if (jsCode[parseInt(document.getElementById("id_s__roles").value)]) {
+                            document.getElementById("id_s__urls").value = jsCode[
+                                parseInt(document.getElementById("id_s__roles").value)].urltogo;
                         } else {
                             document.getElementById("id_s__urls").value = "/my";
                         }
@@ -47,6 +48,7 @@
             }
         },
         /**
+         * @param {String} rooturl Contains the root URL.
          * Checks the correctness of the URL on submit.
          * @method submittingSettings
          */
@@ -54,10 +56,11 @@
             if (document.getElementById("id_s__urls")) {
                 document.getElementById("adminsettings").onsubmit = function () {
                     var urlinputsvalue = document.getElementById("id_s__urls").value;
+                    var link = "";
                     if (urlinputsvalue.substring(0, 4) == "http") {
-                        var link = urlinputsvalue;
+                        link = urlinputsvalue;
                     } else {
-                        var link = rooturl + "" + urlinputsvalue;
+                        link = rooturl + "" + urlinputsvalue;
                     }
                     var xmlhttp = new XMLHttpRequest();
 
@@ -76,11 +79,12 @@
             }
         },
         /**
+         * @param {String} url Contains to URL to be opened in Pop-Up window.
          * Shows Pop-Up Window.
          * @method opennewwindow
          */
         opennewwindow: function (url) {
             window.open(url);
         },
-        };
- });
+    };
+});

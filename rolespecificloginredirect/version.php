@@ -28,7 +28,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2021071615;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2021072212;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2020010100;        // Requires this Moodle version.
 $plugin->component = 'auth_rolespecificloginredirect';      // Full name of the plugin (used for diagnostics).
 $plugin->maturity  = MATURITY_STABLE;

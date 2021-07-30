@@ -1,4 +1,3 @@
-<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -13,26 +12,22 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+/* jshint node: true, browser: false */
+/* eslint-env node */
 
 /**
- * Strings for component 'auth_rolespecificloginredirect', language 'de'
- *
+ * @copyright  2014 Andrew Nicols
  * @package    auth_rolespecificloginredirect
  *
  * @copyright  2020 onwards Igor Nesterow <Igor.Nesterow@b-tu.de>
  * @copyright  2021 onwards Eleonora Kostova <kostoele@b-tu.de>
  * @copyright  based on Email Authentication Plugin by Martin Dougiamas (http://dougiamas.com)
- *
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+ "use strict";
 
-$string['auth_rolespecificloginredirectdescription'] = '<p>Leitet den Nuter, abhängig von seiner Rolle, zu einer bestimmten Startseite weiter.</p>';
-$string['auth_rolespecificloginredirectsettings'] = 'Einstellung';
-$string['pluginname'] = 'Rollenabhängige Weiterleitung';
-$string['roles_small'] = 'roles';
-$string['roles'] = 'Rollen: ';
-$string['urls_small'] = 'urls';
-$string['urls'] = 'Link zur Weiterleitung zu: ';
-$string['url_example'] = 'z.B. /course/view.php?id=2';
-$string['url_default'] = '/my';
-$string['pagenotfound'] = 'Diese Seite wurde nicht gefunden.';
+ module.exports = function (grunt) {
+     // We need to include the core Moodle grunt file too, otherwise we can't run tasks like "amd".
+     require("grunt-load-gruntfile")(grunt);
+     grunt.loadGruntfile("../../Gruntfile.js");
+ };
